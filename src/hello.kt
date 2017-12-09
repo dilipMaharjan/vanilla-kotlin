@@ -1,6 +1,10 @@
+import classes.Hello
+
 fun main(args: Array<String>) {
     println("Hello Kotlin")
     printArray()
+    var hello=Hello()
+    hello.printNameAndAge()
 }
 
 fun printArray() {
