@@ -26,7 +26,10 @@ fun funWithOutReturnType():Unit= println("funtion without return type")
 
 fun funWithOmittedUnit()= println("funtion without <Unit> return type")
 
-
+fun conditionalsAsExpression(a:Int,b:Int)=if(a>b) a else b
+fun funWithDefaultValues(a:Int=5,b:Int){
+    println("The multiplication of $a and $b is : ${a*b}")
+}
 fun main(args:Array<String>){
 
     /**
@@ -48,4 +51,18 @@ fun main(args:Array<String>){
     funWithOutReturnType()
 
     funWithOmittedUnit()
+    println(conditionalsAsExpression(5,4))
+    funWithDefaultValues(2,4)
+    funWithDefaultValues(b=5)
+    println(listOf<Int>(1,2,4,4,5,6,7).filter { 10<=it*2 })
+
+    val map=mapOf(1 to "one",2 to "two")
+
+    for ((k,v) in map){
+        println("$k : $v ")
+    }
+    println(map?.size) //print size of map if not null
+    println(map?.let {
+       map.filter { it.key==1 }
+    })
 }
